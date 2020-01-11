@@ -29,6 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+//购物车
 public class CartActivity extends BaseActivity<CartPresenter> implements ICartContract.IView {
 
 

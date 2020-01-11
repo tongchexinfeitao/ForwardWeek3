@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.bw.forwardweek3"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //butterknife依赖
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //Okhttp日志拦截器
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+ +6
+    //RecyclerView依赖：
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    //配置retrofit2.0     自带Ok和Gson，不需要另外依赖 Ok和 Gson
+    implementation 'com.squareup.retrofit2:retrofit:+'
+    //让retrofit支持Gson自动解析json
+    implementation 'com.squareup.retrofit2:converter-gson:+'
+    //配置支持Rxjava2
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:+'
+
+    //Rxjava的依赖
+    implementation 'io.reactivex.rxjava2:rxjava:+'
+    implementation 'io.reactivex.rxjava2:rxandroid:+'
+
+    //Glide依赖
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //SmartRefresh 上下拉刷新框架
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+
+    //普通用户依赖 android 工具类
+    implementation 'com.blankj:utilcode:1.26.0'
+}
